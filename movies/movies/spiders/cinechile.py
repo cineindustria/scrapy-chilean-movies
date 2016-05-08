@@ -7,6 +7,9 @@ class CinechileSpider(scrapy.Spider):
     allowed_domains = ["cinechile.cl"]
     start_urls = (
         'http://cinechile.cl/ficcion.php',
+        'http://cinechile.cl/documentales.php',
+        'http://cinechile.cl/cortometrajes.php',
+        'http://cinechile.cl/animacion.php'
     )
 
     def parse(self, response):

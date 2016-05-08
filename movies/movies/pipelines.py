@@ -18,7 +18,6 @@ class JsonWriterPipeline(object):
 		self.movieList = []
 
 	def open_spider(self, spider):
-		#self.file.write("[")
 		pass
 
 	def process_item(self, item, spider):
@@ -26,7 +25,6 @@ class JsonWriterPipeline(object):
 		item['year'] = ''.join(item['year'])
 		line = dict(item)
 		self.movieList.append(line)
-		#self.file.write(line)
 		return item
 
 	def close_spider(self, spider):
