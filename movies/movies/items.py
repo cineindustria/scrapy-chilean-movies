@@ -10,3 +10,5 @@ import scrapy
 class MoviesItem(scrapy.Item):
     name = scrapy.Field()
     year = scrapy.Field()
+    duration = scrapy.Field()
+    format = scrapy.Field()

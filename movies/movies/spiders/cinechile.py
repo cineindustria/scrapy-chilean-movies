@@ -17,4 +17,6 @@ class CinechileSpider(scrapy.Spider):
             item = MoviesItem()
             item['name'] = sel.xpath('td/a/text()').extract()
             item['year'] = sel.xpath('td[2]/text()').extract()
+            item['duration'] = sel.xpath('td[3]/text()').extract()
+            item['format'] = sel.xpath('td[4]/text()').extract()
             yield item
