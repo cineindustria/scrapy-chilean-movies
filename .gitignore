@@ -1,4 +1,5 @@
 /env
+/front-test
 *.pyc
 .DS_Store
 *.html
