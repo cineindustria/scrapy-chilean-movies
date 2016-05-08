@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import scrapy
-
+from movies.items import MoviesItem
 
 class CinechileSpider(scrapy.Spider):
     name = "cinechile"
@@ -10,13 +10,8 @@ class CinechileSpider(scrapy.Spider):
     )
 
     def parse(self, response):
-   #  	filename = response.url.split("/")[-2] + '.html'
-   #  	with open(filename, 'wb') as f:
-			# f.write(response.body)
-		for sel in response.xpath('//table[@id="example2"]/tbody/tr'):
-			title = sel.xpath('td/a/text()').extract()
-			year = sel.xpath('td[2]/text()').extract()
-			#link = sel.xpath('a/@href').extract()
-			#desc = sel.xpath('text()').extract()
-			print title, year
-        #pass
+        for sel in response.xpath('//table[@id="example2"]/tbody/tr'):
+            item = MoviesItem()
+            item['name'] = sel.xpath('td/a/text()').extract()
+            item['year'] = sel.xpath('td[2]/text()').extract()
+            yield item
