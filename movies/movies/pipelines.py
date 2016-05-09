@@ -23,8 +23,9 @@ class JsonWriterPipeline(object):
 	def process_item(self, item, spider):
 		item['name'] = ''.join(item['name'])
 		item['year'] = ''.join(item['year'])
-		item['duration'] = ''.join(item['year'])
-		item['format'] = ''.join(item['year'])
+		item['duration'] = ''.join(item['duration'])
+		item['format'] = ''.join(item['format'])
+		item['type'] = ''.join(item['type'])
 		line = dict(item)
 		self.movieList.append(line)
 		return item

@@ -12,3 +12,4 @@ class MoviesItem(scrapy.Item):
     year = scrapy.Field()
     duration = scrapy.Field()
     format = scrapy.Field()
+    type = scrapy.Field()
